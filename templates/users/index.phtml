@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8"/>
+        <title>Slim 3</title>
+        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+              <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        <style>
+            body {
+                margin: 50px 0 0 0;
+                padding: 0;
+                width: 100%;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                text-align: center;
+                color: #aaa;
+                font-size: 18px;
+            }
+
+            h1 {
+                color: #719e40;
+                letter-spacing: -3px;
+                font-family: 'Lato', sans-serif;
+                font-size: 100px;
+                font-weight: 200;
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+
+    <div class="row">
+    <div class="col s12 m12">
+      <div class="card red darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Slim</span>
+          <table>
+        <thead>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Remover</th>
+        </thead>
+         <tbody>
+          <?php foreach($users as $user): ?>
+          <tr>
+           <td><?= $user->id ?></td>
+           <td><?= $user->name ?></td>
+           <td>
+             <a href="/users/<?= $user->id?>"> Remover</a>
+           </td>
+           </tr>
+          <?php endforeach?>
+         </tbody> 
+
+
+        </table>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col s12 m12">
+
+ <legend>Cadastro</legend>
+
+ <form class="col s12" action="/users" method="post">
+      <div class="row">
+       <div class="input-field col s6">
+          <input id="name" name="name" type="text" class="validate">
+          <label for="name">name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="email" name="email" type="text" class="validate">
+          <label for="email">email</label>
+        </div>
+      </div>
+      <div class="row">
+       <div class="input-field col s6">
+          <input id="password" name="password" type="text" class="validate">
+          <label for="password">password</label>
+        </div>
+      </div>
+      
+
+      <div class="row">
+       <div class="input-field col s12">
+        <button class="waves-effect waves-light btn"> salvar</button>
+        </div>
+      </div>
+
+    </form>
+       
+  </div>
+  </div>
+      
+         
+    
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+</html>
